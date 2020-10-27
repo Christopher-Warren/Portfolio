@@ -1,0 +1,76 @@
+h1 {
+  font-family: scope one;
+}
+h2 {
+  font-family: scope one;
+}
+h3 {
+  font-family: scope one;
+}
+p {
+  font-family: sans-serif;
+}
+
+.icon {
+  top: 0.15em;
+}
+.leading-0 {
+  line-height: 0;
+}
+.hardshadow {
+  box-shadow: 0 0px 4px 4px rgba(0, 0, 0, 0.151),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.imgheight {
+  height: 60%;
+}
+
+.overlay {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  color: white;
+  z-index: 10;
+  position: absolute;
+}
+
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 3s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    background: rgba(0, 0, 0, 1);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.fade-in-text {
+  opacity: 1;
+  animation-name: fadeInTextOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1.2s;
+}
+
+@keyframes fadeInTextOpacity {
+  0% {
+    opacity: 0;
+    transform: scale(0.96, 0.96);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 1;
+  }
+}

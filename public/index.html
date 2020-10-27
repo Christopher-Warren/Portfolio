@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tailwind.css" />
+    <link rel="stylesheet" href="helper.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Scope+One"
+    />
+    <title>Christopher Warren Portfolio</title>
+    <!--TODO: 
+  • MAKE BUTTONS PRETTIER
+    ○ ICONS, HOVER, FOCUS, CLICK
+  • FINISH ABOUT ME
+    ○ ADD TECHNOLOGIES LIST
+    ○ REMOVE MERN PHOTO
+  • LINK TO RESUME, GITHUB
+   IN TAILWIND CONFIG --
+  backgroundImage: (theme) => ({
+        "hero-pattern": "url('/public/img/capitan.jpg')",
+      }),
+  
+
+      require('@fullhuman/postcss-purgecss')({
+        content: [
+          './src/**/*.vue',
+          './public/index.html',
+        ],
+        defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+      })
+  --></head>
+
+  <body class="bg-blue-500">
+    <!-- NAVBAR
+<div class="fixed w-10 h-64 bg-gray-900 z-20 right-0 opacity-75 rounded-b-lg shadow-lg">
+  <a href="https://google.com">google</a>
+</div>
+  -->
+
+    <!-- HERO SECTION -->
+    <div class="relative">
+      <div class="bg-hero-img h-screen bg-top md:bg-cover"></div>
+      <div class="overlay fade-in">
+        <!-- HERO HEADER -->
+        <header class="text-center mx-auto fade-in-text py-48 md:my-24">
+          <h1
+            class="text-6xl bold font-medium text-white-100 pb-2 leading-none"
+          >
+            Christopher Warren
+          </h1>
+          <h2 class="text-3xl text-blue-300 leading-none">
+            Fullstack Software Developer
+          </h2>
+          <h2 class="text-2xl text-blue-200 pb-3 leading-none italic hidden">
+            Optional text goes here
+          </h2>
+          <!-- HERO BUTTONS -->
+          <div class="mt-4">
+            <a
+              class="lg:text-1xl text-xl bg-teal-500 font-sans py-2 px-4 mx-4 rounded-lg"
+              href="#projects"
+              id="projectsbutton"
+            >
+              <svg
+                class="w-8 h-8 inline-block align-bottom"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Projects
+            </a>
+            <a
+              class="lg:text-1xl text-xl bg-blue-500 font-sans py-2 px-4 mx-4 rounded-lg"
+              href="#projects"
+            >
+              <!-- RESUME ICON-->
+              <svg
+                class="w-8 h-8 inline-block align-bottom"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Resume
+            </a>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <!-- ABOUT ME SECTION -->
+    <div class="relative bg-gray-200 md:mb-0 pb-24 z-10">
+      <div class="container pt-10 lg:px-56">
+        <div class="flex-wrap text-left">
+          <h3 class="text-5xl font-black text-gray-900">About Me</h3>
+          <p class="lg:pb-0 text-xl">
+            I am a self taught Software Developer currently residing in
+            Chattanooga, TN. In early 2020 I decided to completely dedicate
+            myself to coding. Ever since my first line of code, I can't imagine
+            living a life without it. There's always something new, and
+            challenging to learn and I love that.
+          </p>
+        </div>
+        <!-- ABOUT SOCIALS SECTION -->
+
+        <div class="">
+          <h3 class="text-5xl font-black text-gray-900 text-left mt-5">
+            Socials
+          </h3>
+          <div class="social-btns flex">
+            <div class="w-12 h-12 text-gray-700 hover:text-gray-900 mr-5">
+              <a href="https://github.com/Christopher-Warren"
+                ><svg
+                  class="fill-current"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>GitHub</title>
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="w-12 h-12 text-blue-700 hover:text-blue-900 mr-5">
+              <a
+                href="https://www.linkedin.com/in/christopher-warren-188b2180/"
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="fill-current"
+                >
+                  <title>LinkedIn</title>
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div
+              class="w-12 h-12 text-red-700 hover:text-red-900 bg-gray-400 hover:bg-gray-300 rounded-lg mr-5"
+            >
+              <a href="mailto:christech@gmail.com">
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="fill-current"
+                >
+                  <title>Gmail</title>
+                  <path
+                    d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- TECH STACK -->
+
+        <div class="">
+          <h3 class="text-5xl font-black text-gray-900 text-left mt-5">
+            Tech Stack
+          </h3>
+          <img class="w-56 h-40" src="./img/mern2.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT SECTION -->
+    <div class="bg-blue-500 relative">
+      <div class="container pb-5 pt-16">
+        <h3
+          class="text-center text-5xl font-black text-blue-100 leading-none"
+          id="projects"
+        >
+          Project Showcase
+        </h3>
+        <p
+          class="text-center text-blue-300 pb-4 md:pb-8 italic w-full md:mx-auto leading-tight"
+        >
+          All of the projects below have been created by me, with efficiency and
+          scalability in mind.
+          <!--"If you actually do something you love it's a lot easier and takes on
+          a lot more purpose"<br />
+          - Mark Zuckerberg-->
+        </p>
+      </div>
+    </div>
+    <!-- CARD -->
+    <div class="container md:flex flex-wrap md:justify-center">
+      <div
+        id="iptracker"
+        class="relative lg:w-2/5 rounded-lg bg-gray-300 shadow-2xl overflow-hidden mb-10 mx-4"
+      >
+        <a href="https://iptracker-phi.vercel.app/"
+          ><img
+            src="./img/projects/iptrackerscreen.bmp"
+            link="https://iptracker-phi.vercel.app/"
+            alt=""
+            class="w-full h-64 object-cover object-top"
+        /></a>
+
+        <h4 class="text-xl md:text-3xl px-6 pb-4 pt-2 font-bold text-gray-800">
+          IP Tracker
+        </h4>
+        <p class="px-6 py-2">
+          IP location finder tool that searches for the source location of the
+          specified IP address.
+          <br />
+          • Try generating a random IP address to see it's origin!
+        </p>
+        <!-- CARD TAGS -->
+        <div class="px-6 pb-2 mb-20 lg:absolute lg:mt-20">
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#React</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#TailwindCSS</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#Leaflet</span
+          >
+        </div>
+        <!-- BUTTON OVERLAY -->
+        <div class="absolute bottom-0 bg-gray-400 w-full h-20">
+          <!-- CARD BUTTONS #btn1 -->
+          <div class="flex text-gray-100 text-center">
+            <a
+              href="https://iptracker-phi.vercel.app/"
+              class="flex-1 bg-teal-500 p-3 mx-5 mt-4 rounded hover:bg-teal-600"
+              >Link</a
+            >
+            <a
+              href="https://github.com/Christopher-Warren/iptracker"
+              class="flex-1 bg-gray-700 p-3 mx-5 mt-4 rounded hover:bg-gray-800"
+            >
+              <svg
+                class="h-8 w-8 absolute -mt-1 ml-5 md:block hidden"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z"
+                />
+              </svg>
+              Source</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- END PROJ / NEXT-->
+      <div
+        id="refurn"
+        class="relative lg:w-2/5 rounded-lg bg-gray-300 shadow-2xl overflow-hidden mb-10 mx-4"
+      >
+        <a href="https://refurn.herokuapp.com/"
+          ><img
+            src="./img/projects/refurn.bmp"
+            link="https://refurn.herokuapp.com/"
+            alt=""
+            class="w-full h-64 object-cover object-top"
+        /></a>
+
+        <h4 class="text-xl md:text-3xl px-6 pb-4 pt-2 font-bold text-gray-800">
+          Refurn
+        </h4>
+        <p class="px-6 py-2">
+          Full-stack CRUD App for an imaginary local furniture reseller.
+          <br />
+          • Allows User to upload a listing of the furniture they wish to sell.
+          <br />
+          • Functionality for the business to either Approve or Deny the
+          listing.
+        </p>
+        <!-- CARD TAGS -->
+        <div class="px-6 pb-2 mb-20">
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#React</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#Node.js</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#Express</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#MongoDB</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#Firebase Storage</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#Bootstrap</span
+          >
+        </div>
+        <!-- BUTTON OVERLAY -->
+        <div class="absolute bottom-0 bg-gray-400 w-full h-20">
+          <!-- CARD BUTTONS #btn1 -->
+          <div class="flex text-gray-100 text-center">
+            <a
+              href="https://refurn.herokuapp.com/"
+              class="flex-1 bg-teal-500 p-3 mx-5 mt-4 rounded"
+              >Link</a
+            >
+            <a
+              href="https://github.com/Christopher-Warren/Refurn"
+              class="flex-1 bg-gray-700 p-3 mx-5 mt-4 rounded hover:bg-gray-800"
+            >
+              <svg
+                class="h-8 w-8 absolute -mt-1 ml-5 md:block hidden"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z"
+                />
+              </svg>
+              Source</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- END PROJ / NEXT -->
+      <div
+        id="portfolio"
+        class="relative lg:w-2/5 rounded-lg bg-gray-300 shadow-2xl overflow-hidden mb-10 mx-4"
+      >
+        <a href="https://iptracker-phi.vercel.app/"
+          ><img
+            src="./img/projects/portfolio.bmp"
+            link="https://iptracker-phi.vercel.app/"
+            alt=""
+            class="w-full h-64 object-cover object-top"
+        /></a>
+
+        <h4 class="text-xl md:text-3xl px-6 pb-4 pt-2 font-bold text-gray-800">
+          Portfolio
+        </h4>
+        <p class="px-6 py-2">
+          Simple, static, single-page portfolio website, that demonstrates my
+          skills with the very basics.
+        </p>
+        <!-- CARD TAGS -->
+        <div class="px-6 pb-2 mb-20">
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#HTML</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#CSS</span
+          >
+          <span
+            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >#TailwindCSS</span
+          >
+        </div>
+        <!-- BUTTON OVERLAY -->
+        <div class="absolute bottom-0 bg-gray-400 w-full h-20">
+          <!-- CARD BUTTONS #btn1 -->
+          <div class="flex text-gray-100 text-center">
+            <a
+              href="/"
+              class="flex-1 bg-teal-500 p-3 mx-5 mt-4 rounded hover:bg-teal-600"
+              >Link</a
+            >
+            <a
+              href="https://github.com/Christopher-Warren/Portfolio"
+              class="flex-1 bg-gray-700 p-3 mx-5 mt-4 rounded hover:bg-gray-800"
+            >
+              <svg
+                class="h-8 w-8 absolute -mt-1 ml-5 md:block hidden"
+                viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z"
+                />
+              </svg>
+              Source</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- END PROJ -->
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bg-blue-800 md:h-16 w-full text-white">
+      <div class="border-blue-700 border-t mx-20"></div>
+      <div class="text-center text-gray-300 mt-4">
+        © 2020 Christopher Warren. All Rights Reserved. Design:
+        <a href="https://www.chriswarren.tech/">Christopher Warren</a> •
+        Contact:
+
+        <a href="mailto:christech@gmail.com" class="underline"
+          >chriswarrentech@gmail.com</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
