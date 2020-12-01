@@ -74,3 +74,6 @@ p {
     opacity: 1;
   }
 }
+.card-height {
+  height: 40rem;
+}
